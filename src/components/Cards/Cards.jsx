@@ -5,7 +5,14 @@ import CountUp from 'react-countup';
 import cx from 'classnames';
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     if(!confirmed) {
-        return 'Loading...';
+        return (
+            <div class="ui segment">
+                <div class="ui active inverted dimmer">
+                    <div class="ui text loader">Loading</div>
+                </div>
+                <p></p>
+            </div>
+        );
    }
     return (
         <div className={styles.container}>
