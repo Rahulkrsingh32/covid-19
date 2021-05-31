@@ -1,19 +1,20 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid, StylesProvider } from '@material-ui/core';
+import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import styles from './Cards.module.css';
 import CountUp from 'react-countup';
 import cx from 'classnames';
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     if(!confirmed) {
         return (
-            <div class="ui segment">
-                <div class="ui active inverted dimmer">
-                    <div class="ui text loader">Loading</div>
+            <div className="ui segment">
+                <div className="ui active inverted dimmer">
+                    <div className="ui text loader">Loading</div>
                 </div>
                 <p></p>
             </div>
         );
    }
+   
     return (
         <div className={styles.container}>
             <Grid container spacing={3} justify="center">
